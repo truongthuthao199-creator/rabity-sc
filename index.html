@@ -446,8 +446,8 @@ function suggestSC(){
 }
 function openForm(){
   if(!lastResult)return;
-  const{sku,price,name}=lastResult;
-  window.open(FORM_BASE+'?usp=pp_url&'+E_SKU+'='+encodeURIComponent(sku||'')+'&'+E_TEN+'='+encodeURIComponent(name||'')+'&'+E_GIA+'='+encodeURIComponent(price||''),'_blank');
+  const{sku,price,name,sc}=lastResult;
+  window.open(FORM_BASE+'?usp=pp_url&'+E_SKU+'='+encodeURIComponent(sku||'')+'&'+E_TEN+'='+encodeURIComponent(name||'')+'&'+E_GIA+'='+encodeURIComponent(price||'')+'&'+E_SC+'='+encodeURIComponent(sc.sc_median||''),'_blank');
 }
 function clearNew(){
   ['sku-input','name-input','price-input'].forEach(id=>document.getElementById(id).value='');
